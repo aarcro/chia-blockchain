@@ -95,7 +95,6 @@ def check_plots(root_path, num, challenge_start, grep_string, list_duplicates, d
         log.info(f"\tFarmer public key: {farmer_public_key}")
         log.info(f"\tLocal sk: {local_sk}")
         total_proofs = 0
-        total_time = 0
         caught_exception: bool = False
         for i in range(num_start, num_end):
             challenge = std_hash(i.to_bytes(32, "big"))
@@ -143,10 +142,7 @@ def check_plots(root_path, num, challenge_start, grep_string, list_duplicates, d
             if caught_exception is True:
                 break
         if total_proofs > 0 and caught_exception is False:
-            log.info(
-                f"\tProofs {total_proofs} / {challenges}, {round(total_proofs/float(challenges), 4)}, "
-                f"avg proof time: {total_time/total_proofs} ms"
-            )
+            log.info(f"\tProofs {total_proofs} / {challenges}, {round(total_proofs/float(challenges), 4)}")
             total_good_plots[pr.get_size()] += 1
             total_size += plot_path.stat().st_size
         else:
