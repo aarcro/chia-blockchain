@@ -133,7 +133,7 @@ OG plots made before this release can continue to be farmed side by side with th
 
 - If you resync your wallet, transactions made with your plot NFTs will show incorrectly in the GUI. The internal accounting, and total balance displayed is correct.
 
-### 1.1.7 Chia Blockchain 2021-06-05
+## 1.1.7 Chia Blockchain 2021-06-05
 
 ### Fixed
 
